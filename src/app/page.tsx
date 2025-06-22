@@ -18,19 +18,18 @@ export default function Home() {
               <div className="text-sm text-gray-500 hidden sm:block">株式会社ミナト</div>
             </div>
             <nav className="hidden lg:flex items-center space-x-8">
-              <a href="#about" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">会社概要</a>
+              <a href="#about" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">ミナトについて</a>
               <a href="#services" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">事業内容</a>
-              <a href="#stats" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">実績</a>
               <a href="#contact" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">お問い合わせ</a>
             </nav>
-            {/* <div className="lg:hidden"> */}
+            <div className="lg:hidden flex items-center space-x-4">
               {/* <Button variant="outline" size="sm" className="hidden sm:flex text-xs">
                 資料請求
               </Button> */}
               <Button className="lg:hidden" variant="ghost" size="sm">
                 <Menu className="h-4 w-4" />
               </Button>
-            {/* </div> */}
+            </div>
           </div>
         </div>
       </header>
@@ -62,14 +61,7 @@ export default function Home() {
                 地域の文化と発展を
               </p>
             </FadeIn>
-            <FadeIn direction="up" delay={1000}>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-3 text-base font-medium btn-modern shadow-card">
-                  お問い合わせ
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </div>
-            </FadeIn>
+
           </div>
         </div>
 
@@ -77,51 +69,6 @@ export default function Home() {
           <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
             <div className="w-1 h-3 bg-white rounded-full mt-2" />
           </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section id="stats" className="py-24 bg-gradient-to-b from-blue-50 to-white">
-        <div className="container mx-auto px-4 lg:px-8">
-          <FadeIn>
-            <div className="text-center mb-16">
-              <div className="inline-block bg-blue-100 text-blue-600 rounded-full px-4 py-2 text-sm font-medium mb-4">
-                OUR ACHIEVEMENTS
-              </div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                実績と信頼
-              </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                沖縄の地域特性を理解し、多くのお客様から信頼をいただいております。
-              </p>
-            </div>
-          </FadeIn>
-
-          <StaggeredFadeIn stagger={200}>
-            {[
-              { id: 'transactions', icon: Users, number: 150, suffix: '+', title: '取引実績', description: 'お客様との取引件数' },
-              { id: 'experience', icon: Calendar, number: 8, suffix: '年', title: '事業歴', description: '地域密着の実績' },
-              { id: 'satisfaction', icon: Award, number: 98, suffix: '%', title: '満足度', description: 'お客様満足度' },
-              { id: 'properties', icon: Building2, number: 50, suffix: '+', title: '管理物件', description: '現在管理中の物件数' }
-            ].map((stat, index) => (
-              <ScaleIn key={stat.id} delay={index * 100}>
-                <Card className="text-center p-8 border-0 bg-white hover:shadow-xl transition-all duration-500 hover-lift shadow-card">
-                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center">
-                    <stat.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <div className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
-                    <CountUpAnimation
-                      end={stat.number}
-                      duration={2500}
-                      suffix={stat.suffix}
-                    />
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{stat.title}</h3>
-                  <p className="text-gray-600">{stat.description}</p>
-                </Card>
-              </ScaleIn>
-            ))}
-          </StaggeredFadeIn>
         </div>
       </section>
 
@@ -149,7 +96,7 @@ export default function Home() {
                 gradient: "from-blue-500 to-blue-600",
                 bgColor: "bg-blue-50",
                 textColor: "text-blue-600",
-                icon: Building2,
+                image: 'images/estate.jpg',
                 title: "不動産",
                 subtitle: "売買・管理",
                 description: "沖縄の独特な地域特性と市場動向を熟知したプロフェッショナルが、不動産売買から管理まで一貫してサポート。お客様の大切な資産の価値を最大化いたします。"
@@ -159,7 +106,7 @@ export default function Home() {
                 gradient: "from-cyan-500 to-cyan-600",
                 bgColor: "bg-cyan-50",
                 textColor: "text-cyan-600",
-                icon: Hotel,
+                image: 'images/hotel.jpg',
                 title: "ホテル",
                 subtitle: "売買・管理",
                 description: "観光立県沖縄の特性を活かし、ホテル・宿泊施設の売買から運営管理まで幅広くサポート。観光業界の動向を見据えた戦略的なアドバイスを提供いたします。"
@@ -168,8 +115,8 @@ export default function Home() {
               <FadeIn key={service.id} direction="up" delay={index * 200}>
                 <Card className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white hover-lift shadow-card">
                   <div className="relative overflow-hidden rounded-t-lg">
-                    <div className={`h-48 bg-gradient-to-br ${service.gradient} flex items-center justify-center`}>
-                      <service.icon className="w-20 h-20 text-white" />
+                    <div className={`bg-gradient-to-br ${service.gradient} flex items-center justify-center`}>
+                      <img src={service.image} className="block w-full aspect-video object-cover" />
                     </div>
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
                   </div>
@@ -184,12 +131,6 @@ export default function Home() {
                       {service.description}
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="px-8 pb-8">
-                    <Button variant="ghost" className="w-full group/btn">
-                      詳しく見る
-                      <ExternalLink className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
-                    </Button>
-                  </CardContent>
                 </Card>
               </FadeIn>
             ))}
@@ -219,12 +160,6 @@ export default function Home() {
                   <p>
                     不動産、ホテルの各分野において、地域に根ざした専門知識と豊富な経験を活かし、お客様の大切な資産を守り、育てるパートナーとしてお役に立てるよう努めております。
                   </p>
-                </div>
-                <div className="mt-10">
-                  <Button size="lg" className="bg-gray-900 text-white hover:bg-gray-800">
-                    会社概要を見る
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
                 </div>
               </div>
             </FadeIn>
@@ -275,12 +210,10 @@ export default function Home() {
             </div>
           </FadeIn>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-6xl mx-auto mb-12">
             {[
               { id: "phone", icon: Phone, title: "お電話", description: "お急ぎの方", status: "準備中" },
               { id: "email", icon: Mail, title: "メール", description: "詳細な相談", status: "準備中" },
-              { id: "visit", icon: MapPin, title: "ご来社", description: "直接相談", status: "事前予約制" },
-              { id: "materials", icon: ExternalLink, title: "資料請求", description: "詳細資料", status: "無料ダウンロード" }
             ].map((contact, index) => (
               <FadeIn key={contact.id} direction="up" delay={index * 100}>
                 <Card className="text-center p-8 border-0 bg-white hover:shadow-lg transition-shadow hover-lift shadow-soft">
@@ -293,14 +226,14 @@ export default function Home() {
             ))}
           </div>
 
-          <FadeIn delay={800}>
+          {/* <FadeIn delay={800}>
             <div className="text-center mt-12">
               <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-12 py-4 text-lg btn-modern shadow-card">
                 お問い合わせフォーム
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
-          </FadeIn>
+          </FadeIn> */}
         </div>
       </section>
 
@@ -308,14 +241,10 @@ export default function Home() {
       <footer className="bg-gray-900 text-white">
         <div className="container mx-auto px-4 lg:px-8 py-16">
           <FadeIn>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
               <div className="lg:col-span-2">
                 <div className="mb-6">
-                  <div className="text-2xl font-bold mb-2">MINATO</div>
-                  <div className="text-lg text-gray-300 mb-4">株式会社ミナト</div>
-                  <p className="text-gray-400 leading-relaxed max-w-md">
-                    地域の文化と発展を。沖縄から始まる新しい価値創造のパートナーとして、お客様の資産を守り、育てます。
-                  </p>
+                  <div className="text-2xl font-bold mb-2">株式会社ミナト</div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <MapPin className="w-5 h-5 text-blue-400 mt-1 flex-shrink-0" />
@@ -337,30 +266,30 @@ export default function Home() {
                 </ul>
               </div>
 
-              <div>
+              {/* <div>
                 <h4 className="text-lg font-semibold mb-6">企業情報</h4>
                 <ul className="space-y-3 text-gray-300">
                   <li className="hover:text-white transition-colors cursor-pointer">会社概要</li>
                   <li className="hover:text-white transition-colors cursor-pointer">企業理念</li>
                   <li className="hover:text-white transition-colors cursor-pointer">プライバシーポリシー</li>
                 </ul>
-              </div>
+              </div> */}
             </div>
           </FadeIn>
 
           <div className="border-t border-gray-800 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="flex flex-col md:flex-row justify-center items-center">
               <p className="text-gray-400 text-sm">
                 &copy; 2025 株式会社ミナト. All rights reserved.
               </p>
-              <div className="flex space-x-4 mt-4 md:mt-0">
+              {/* <div className="flex space-x-4 mt-4 md:mt-0">
                 <button className="text-gray-400 hover:text-white transition-colors">
                   プライバシーポリシー
                 </button>
                 <button className="text-gray-400 hover:text-white transition-colors">
                   利用規約
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
