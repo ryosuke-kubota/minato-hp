@@ -139,9 +139,9 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-24 bg-white">
+      <section id="about" className="py-24 bg-white overflow-hidden">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center max-w-7xl mx-auto">
             <FadeIn direction="left">
               <div>
                 <div className="inline-block bg-gray-100 text-gray-600 rounded-full px-4 py-2 text-sm font-medium mb-6">
@@ -165,17 +165,17 @@ export default function Home() {
             </FadeIn>
 
             <FadeIn direction="right" delay={200}>
-              <div className="relative">
+              <div className="relative mt-8 lg:mt-0">
                 <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                   <img
                     src="https://ugc.same-assets.com/VL9xa8c3qhFgzuCm3aSV-GllOKTT87Ce.jpeg"
                     alt="沖縄の美しい海"
-                    className="w-full h-96 object-cover"
+                    className="w-full h-64 sm:h-80 lg:h-96 object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                 </div>
                 <ScaleIn delay={600}>
-                  <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-6 max-w-sm">
+                  <div className="mt-6 lg:absolute lg:-bottom-6 lg:left-4 lg:right-4 xl:-left-6 xl:right-auto bg-white rounded-2xl shadow-xl p-4 sm:p-6 max-w-sm mx-auto lg:mx-0">
                     <div className="flex items-center space-x-3 mb-3">
                       <MapPin className="w-5 h-5 text-blue-600" />
                       <span className="font-semibold text-gray-900">本社所在地</span>
