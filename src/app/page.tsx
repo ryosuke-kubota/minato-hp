@@ -1,9 +1,21 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { MapPin, Phone, Mail, Building2, Hotel, ArrowRight, Menu, ExternalLink, Users, Calendar, Award } from "lucide-react"
+import { MapPin, Phone, Mail, Building2, Hotel, ArrowRight, Menu, X, ExternalLink, Users, Calendar, Award } from "lucide-react"
 import { FadeIn, StaggeredFadeIn, CountUpAnimation, ScaleIn, ScrollProgressBar } from '@/components/ScrollAnimations'
+import { useState } from 'react'
 
 export default function Home() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen)
+  }
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false)
+  }
   return (
     <div className="min-h-screen bg-white">
       {/* Scroll Progress Bar */}
@@ -26,12 +38,53 @@ export default function Home() {
               {/* <Button variant="outline" size="sm" className="hidden sm:flex text-xs">
                 資料請求
               </Button> */}
-              <Button className="lg:hidden" variant="ghost" size="sm">
-                <Menu className="h-4 w-4" />
+              <Button
+                className="lg:hidden"
+                variant="ghost"
+                size="sm"
+                onClick={toggleMobileMenu}
+                aria-label="メニューを開く"
+              >
+                {isMobileMenuOpen ? (
+                  <X className="h-4 w-4" />
+                ) : (
+                  <Menu className="h-4 w-4" />
+                )}
               </Button>
             </div>
           </div>
         </div>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-custom border-b border-gray-100 shadow-soft">
+            <nav className="container mx-auto px-4 py-4">
+              <div className="flex flex-col space-y-4">
+                <a
+                  href="#about"
+                  className="text-sm text-gray-600 hover:text-gray-900 transition-colors py-2"
+                  onClick={closeMobileMenu}
+                >
+                  ミナトについて
+                </a>
+                <a
+                  href="#services"
+                  className="text-sm text-gray-600 hover:text-gray-900 transition-colors py-2"
+                  onClick={closeMobileMenu}
+                >
+                  事業内容
+                </a>
+                <a
+                  href="#contact"
+                  className="text-sm text-gray-600 hover:text-gray-900 transition-colors py-2"
+                  onClick={closeMobileMenu}
+                >
+                  お問い合わせ
+                </a>
+              </div>
+            </nav>
+          </div>
+        )}
       </header>
 
       {/* Hero Section */}
