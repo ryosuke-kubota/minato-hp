@@ -10,7 +10,7 @@ export default function Home() {
       <ScrollProgressBar />
 
       {/* Fixed Header Navigation */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-custom border-b border-gray-100 shadow-soft">
+      <header className="fixed top-1 left-0 right-0 z-50 bg-white/95 backdrop-blur-custom border-b border-gray-100 shadow-soft">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-2">
@@ -42,12 +42,12 @@ export default function Home() {
             backgroundImage: `url('images/hero.jpg')`
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/50 to-black/30" />
 
         <div className="relative z-10 container mx-auto px-4 lg:px-8 text-center text-white">
           <div className="max-w-4xl mx-auto">
             <FadeIn direction="down" delay={200}>
-              <div className="inline-block bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+              <div className="inline-block bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-12">
                 <span className="text-sm font-medium">沖縄・那覇の不動産売買・管理</span>
               </div>
             </FadeIn>
