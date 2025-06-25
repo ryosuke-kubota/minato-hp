@@ -5,6 +5,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { MapPin, Phone, Mail, Building2, Hotel, ArrowRight, Menu, X, ExternalLink, Users, Calendar, Award } from "lucide-react"
 import { FadeIn, StaggeredFadeIn, CountUpAnimation, ScaleIn, ScrollProgressBar } from '@/components/ScrollAnimations'
 import { useState } from 'react'
+import nextConfig from "../../next.config.js";
+
+const BASE_PATH = nextConfig.basePath || "";
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -92,7 +95,7 @@ export default function Home() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{
-            backgroundImage: `url('images/hero.jpg')`
+            backgroundImage: `url('${BASE_PATH}/images/hero.jpg')`
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/50 to-black/30" />
@@ -111,7 +114,7 @@ export default function Home() {
             </FadeIn>
             <FadeIn direction="up" delay={600}>
               <p className="text-xl md:text-2xl lg:text-3xl mb-12 font-light tracking-wide">
-                地域の文化と発展を
+                - 地域の文化と発展を -
               </p>
             </FadeIn>
 
@@ -149,7 +152,7 @@ export default function Home() {
                 gradient: "from-blue-500 to-blue-600",
                 bgColor: "bg-blue-50",
                 textColor: "text-blue-600",
-                image: 'images/estate.jpg',
+                image: `${BASE_PATH}/images/estate.jpg`,
                 title: "不動産",
                 subtitle: "売買・管理",
                 description: "沖縄の独特な地域特性と市場動向を熟知したプロフェッショナルが、不動産売買から管理まで一貫してサポート。お客様の大切な資産の価値を最大化いたします。"
@@ -159,7 +162,7 @@ export default function Home() {
                 gradient: "from-cyan-500 to-cyan-600",
                 bgColor: "bg-cyan-50",
                 textColor: "text-cyan-600",
-                image: 'images/hotel.jpg',
+                image: `${BASE_PATH}/images/hotel.jpg`,
                 title: "ホテル",
                 subtitle: "売買・管理",
                 description: "観光立県沖縄の特性を活かし、ホテル・宿泊施設の売買から運営管理まで幅広くサポート。観光業界の動向を見据えた戦略的なアドバイスを提供いたします。"
@@ -221,7 +224,7 @@ export default function Home() {
               <div className="relative mt-8 lg:mt-0">
                 <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                   <img
-                    src="https://ugc.same-assets.com/VL9xa8c3qhFgzuCm3aSV-GllOKTT87Ce.jpeg"
+                    src={`${BASE_PATH}/images/about.jpg`}
                     alt="沖縄の美しい海"
                     className="w-full h-64 sm:h-80 lg:h-96 object-cover"
                   />
