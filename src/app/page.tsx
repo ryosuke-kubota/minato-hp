@@ -93,7 +93,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center bg-fixed"
+          className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: `url('${BASE_PATH}/images/hero.jpg')`
           }}
