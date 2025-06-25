@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ClientBody from "./ClientBody";
 import nextConfig from "../../next.config.js";
-import { headers } from "next/headers";
 
 const BASE_PATH = nextConfig.basePath || "";
 
@@ -17,15 +16,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const headersList = await headers();
-const url = new URL(`https://${headersList.get("host")}`);
-
 export const metadata: Metadata = {
   title: "株式会社ミナト | 地域の文化と発展を",
   description: "沖縄県那覇市を拠点とする株式会社ミナト。不動産売買・管理、ホテル売買・管理、資産管理を通じて地域の文化と発展に貢献いたします。",
   keywords: "株式会社ミナト, 沖縄, 那覇, 不動産, ホテル, 資産管理, 売買, 管理",
   authors: [{ name: "株式会社ミナト" }],
-  metadataBase: url,
+  metadataBase: new URL('https://ryosuke-kubota.github.io/minato-hp/'),
   openGraph: {
     title: "株式会社ミナト | 地域の文化と発展を",
     description: "沖縄県那覇市を拠点とする株式会社ミナト。不動産売買・管理、ホテル売買・管理、資産管理を通じて地域の文化と発展に貢献いたします。",
