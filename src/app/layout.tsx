@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ClientBody from "./ClientBody";
+import nextConfig from "../../next.config.js";
+
+const BASE_PATH = nextConfig.basePath || "";
 
 const geist = Geist({
   variable: "--font-geist-sans",
@@ -23,6 +26,14 @@ export const metadata: Metadata = {
     description: "沖縄県那覇市を拠点とする株式会社ミナト。不動産売買・管理、ホテル売買・管理、資産管理を通じて地域の文化と発展に貢献いたします。",
     type: "website",
     locale: "ja_JP",
+    images: [
+      {
+        url: `${BASE_PATH}/images/ogp.png`, // Replace with the actual path to your image
+        width: 1200, // Optional: specify the width of the image
+        height: 630, // Optional: specify the height of the image
+        alt: "株式会社ミナト", // Optional: provide an alt text for the image
+      },
+    ]
   },
 };
 
