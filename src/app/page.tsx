@@ -35,6 +35,7 @@ export default function Home() {
             <nav className="hidden lg:flex items-center space-x-8">
               <a href="#about" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">ミナトについて</a>
               <a href="#services" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">事業内容</a>
+              <a href="/company" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">会社概要</a>
               <a href="#contact" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">お問い合わせ</a>
             </nav>
             <div className="lg:hidden flex items-center space-x-4">
@@ -76,6 +77,13 @@ export default function Home() {
                   onClick={closeMobileMenu}
                 >
                   事業内容
+                </a>
+                <a
+                  href="/company"
+                  className="text-sm text-gray-600 hover:text-gray-900 transition-colors py-2"
+                  onClick={closeMobileMenu}
+                >
+                  会社概要
                 </a>
                 <a
                   href="#contact"
@@ -322,14 +330,14 @@ export default function Home() {
                 </ul>
               </div>
 
-              {/* <div>
+              <div>
                 <h4 className="text-lg font-semibold mb-6">企業情報</h4>
                 <ul className="space-y-3 text-gray-300">
-                  <li className="hover:text-white transition-colors cursor-pointer">会社概要</li>
-                  <li className="hover:text-white transition-colors cursor-pointer">企業理念</li>
-                  <li className="hover:text-white transition-colors cursor-pointer">プライバシーポリシー</li>
+                  <li className="hover:text-white transition-colors cursor-pointer">
+                    <a href="/company">会社概要</a>
+                  </li>
                 </ul>
-              </div> */}
+              </div>
             </div>
           </FadeIn>
 
