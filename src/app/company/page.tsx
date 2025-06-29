@@ -191,8 +191,17 @@ export default function Company() {
                         </div>
                       </div>
                     </div>
-                    <div className="bg-gray-100 rounded-lg flex items-center justify-center h-64">
-                      <p className="text-gray-500">地図（準備中）</p>
+                    <div className="bg-gray-100 rounded-lg overflow-hidden h-64">
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3578.8234567890123!2d127.6789012345678!3d26.2123456789012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDEyJzQ0LjQiTiAxMjfCsDQwJzQ0LjAiRQ!5e0!3m2!1sja!2sjp!4v1640995200000!5m2!1sja!2sjp&q=沖縄県那覇市松尾2-10-23"
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title="株式会社ミナト 本社所在地"
+                      />
                     </div>
                   </div>
                 </CardContent>
