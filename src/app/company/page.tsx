@@ -27,15 +27,15 @@ export default function Company() {
       <header className="bg-white border-b border-gray-100 sticky top-0 z-50 backdrop-blur-sm bg-white/95">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <Link href="/" className="flex items-center space-x-2">
+            <Link href={`${BASE_PATH}/`} className="flex items-center space-x-2">
               <div className="text-xl font-bold text-gray-900">MINATO</div>
               <div className="text-sm text-gray-500 hidden sm:block">株式会社ミナト</div>
             </Link>
             <nav className="hidden lg:flex items-center space-x-8">
-              <Link href="/#about" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">ミナトについて</Link>
-              <Link href="/#services" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">事業内容</Link>
-              <Link href="/company" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">会社概要</Link>
-              <Link href="/#contact" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">お問い合わせ</Link>
+              <Link href={`${BASE_PATH}/#about`} className="text-sm text-gray-600 hover:text-gray-900 transition-colors">ミナトについて</Link>
+              <Link href={`${BASE_PATH}/#services`} className="text-sm text-gray-600 hover:text-gray-900 transition-colors">事業内容</Link>
+              <Link href={`${BASE_PATH}/company`} className="text-sm text-gray-600 hover:text-gray-900 transition-colors">会社概要</Link>
+              <Link href={`${BASE_PATH}/#contact`} className="text-sm text-gray-600 hover:text-gray-900 transition-colors">お問い合わせ</Link>
             </nav>
             <div className="lg:hidden flex items-center space-x-4">
               <Button
@@ -61,28 +61,28 @@ export default function Company() {
             <nav className="container mx-auto px-4 py-4">
               <div className="flex flex-col space-y-4">
                 <Link
-                  href="/#about"
+                  href={`${BASE_PATH}/#about`}
                   className="text-sm text-gray-600 hover:text-gray-900 transition-colors py-2"
                   onClick={closeMobileMenu}
                 >
                   ミナトについて
                 </Link>
                 <Link
-                  href="/#services"
+                  href={`${BASE_PATH}/#services`}
                   className="text-sm text-gray-600 hover:text-gray-900 transition-colors py-2"
                   onClick={closeMobileMenu}
                 >
                   事業内容
                 </Link>
                 <Link
-                  href="/company"
+                  href={`${BASE_PATH}/company`}
                   className="text-sm text-gray-600 hover:text-gray-900 transition-colors py-2"
                   onClick={closeMobileMenu}
                 >
                   会社概要
                 </Link>
                 <Link
-                  href="/#contact"
+                  href={`${BASE_PATH}/#contact`}
                   className="text-sm text-gray-600 hover:text-gray-900 transition-colors py-2"
                   onClick={closeMobileMenu}
                 >
@@ -222,7 +222,7 @@ export default function Company() {
               <p className="text-xl mb-8 opacity-90">
                 ご質問やご相談がございましたら、お気軽にお問い合わせください
               </p>
-              <Link href="/#contact">
+              <Link href={`${process.env.BASE_PATH ?? ''}/#contact`}>
                 <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg">
                   お問い合わせはこちら
                 </Button>
