@@ -233,13 +233,59 @@ export default function Company() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center">
-            <div className="text-xl font-bold mb-4">株式会社ミナト</div>
-            <p className="text-gray-400 text-sm">
-              &copy; 2025 株式会社ミナト. All rights reserved.
-            </p>
+      <footer className="bg-gray-900 text-white">
+        <div className="container mx-auto px-4 lg:px-8 py-16">
+          <FadeIn>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+              <div className="lg:col-span-2">
+                <div className="mb-6">
+                  <div className="text-2xl font-bold mb-2">株式会社ミナト</div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <MapPin className="w-5 h-5 text-blue-400 mt-1 flex-shrink-0" />
+                  <div className="text-gray-300">
+                    <div className="font-medium mb-1">本社所在地</div>
+                    <div className="text-sm">
+                      〒900-0014<br />
+                      沖縄県那覇市松尾2-10-23 一階
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold mb-6">事業内容</h4>
+                <ul className="space-y-3 text-gray-300">
+                  <li className="hover:text-white transition-colors cursor-pointer">不動産 売買・管理</li>
+                  <li className="hover:text-white transition-colors cursor-pointer">ホテル 売買・管理</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold mb-6">企業情報</h4>
+                <ul className="space-y-3 text-gray-300">
+                  <li className="hover:text-white transition-colors cursor-pointer">
+                    <a href={`/company`}>会社概要</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </FadeIn>
+
+          <div className="border-t border-gray-800 pt-8">
+            <div className="flex flex-col md:flex-row justify-center items-center">
+              <p className="text-gray-400 text-sm">
+                &copy; 2025 株式会社ミナト. All rights reserved.
+              </p>
+              {/* <div className="flex space-x-4 mt-4 md:mt-0">
+                <button className="text-gray-400 hover:text-white transition-colors">
+                  プライバシーポリシー
+                </button>
+                <button className="text-gray-400 hover:text-white transition-colors">
+                  利用規約
+                </button>
+              </div> */}
+            </div>
           </div>
         </div>
       </footer>
