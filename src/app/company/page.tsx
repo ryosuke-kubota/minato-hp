@@ -8,7 +8,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import nextConfig from "../../../next.config.js";
 
-const BASE_PATH = nextConfig.basePath || "";
+const BASE_PATH = "/" + nextConfig.basePath || "";
 
 export default function Company() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -27,7 +27,7 @@ export default function Company() {
       <header className="bg-white border-b border-gray-100 sticky top-0 z-50 backdrop-blur-sm bg-white/95">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <Link href={`${BASE_PATH}/`} className="flex items-center space-x-2">
+            <Link href={`/${BASE_PATH}/`} className="flex items-center space-x-2">
               <div className="text-xl font-bold text-gray-900">MINATO</div>
               <div className="text-sm text-gray-500 hidden sm:block">株式会社ミナト</div>
             </Link>
