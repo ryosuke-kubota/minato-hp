@@ -8,7 +8,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import nextConfig from "../../../next.config.js";
 
-const BASE_PATH = "/" + nextConfig.basePath || "";
+const BASE_PATH = nextConfig.basePath || "";
 
 export default function Company() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)

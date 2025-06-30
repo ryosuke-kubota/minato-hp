@@ -7,7 +7,7 @@ import { FadeIn, StaggeredFadeIn, CountUpAnimation, ScaleIn, ScrollProgressBar }
 import { useState } from 'react'
 import nextConfig from "../../next.config.js";
 
-const BASE_PATH = "/" + nextConfig.basePath || "";
+const BASE_PATH = nextConfig.basePath || "";
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
