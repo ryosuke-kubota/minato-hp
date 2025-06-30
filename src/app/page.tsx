@@ -267,7 +267,7 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                 お問い合わせ
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-sm md:text-lg text-gray-600 max-w-2xl mx-auto">
                 不動産・ホテルに関するご相談は、お気軽にお問い合わせください。<br />
                 専門スタッフが丁寧にサポートいたします。
               </p>
